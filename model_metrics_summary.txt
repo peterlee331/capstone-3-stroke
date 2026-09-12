@@ -1,0 +1,53 @@
+MODEL METRICS SUMMARY Stroke Risk Prediction Analysis – Capstone Three
+
+INITIAL MODEL CROSS-VALIDATION PERFORMANCE
+
+Logistic Regression Accuracy: 0.739 Precision: 0.133 Recall: 0.789
+F1-score: 0.227 ROC-AUC: 0.839 PR-AUC: 0.193
+
+Random Forest Accuracy: 0.951 Precision: 0.100 Recall: 0.005 F1-score:
+0.010 ROC-AUC: 0.811 PR-AUC: 0.163
+
+Decision Tree Accuracy: 0.919 Precision: 0.151 Recall: 0.141 F1-score:
+0.145 ROC-AUC: 0.550 PR-AUC: 0.064
+
+Dummy Classifier Accuracy: 0.951 Precision: 0.000 Recall: 0.000
+F1-score: 0.000 ROC-AUC: 0.500 PR-AUC: 0.049
+
+TUNED MODEL RESULTS
+
+Logistic Regression The tuned logistic regression produced essentially
+the same cross-validation performance as the initial model and remained
+the strongest overall model.
+
+Decision Tree Recall: approximately 0.628 PR-AUC: approximately 0.149
+
+Random Forest Recall: approximately 0.769 PR-AUC: approximately 0.180
+
+FINAL LOGISTIC REGRESSION – TEST SET PERFORMANCE
+
+Accuracy: 0.746 Precision: 0.138 Recall: 0.800 F1-score: 0.235 ROC-AUC:
+0.844 PR-AUC: 0.268
+
+Confusion Matrix True Negatives: 722 False Positives: 250 False
+Negatives: 10 True Positives: 40
+
+INTERPRETATION
+
+Logistic regression was selected as the final model because it provided
+the strongest overall balance of recall, PR-AUC, and ROC-AUC for
+identifying stroke cases in this highly imbalanced dataset.
+
+On the unseen test set, the model correctly identified 40 of the 50
+stroke cases, resulting in a recall of 0.800. However, precision was
+relatively low at 0.138 because the model also classified 250 non-stroke
+cases as stroke cases. This reflects the tradeoff between identifying a
+high proportion of stroke cases and generating false-positive
+predictions.
+
+The high accuracy of the Dummy Classifier and Random Forest demonstrates
+why accuracy alone was not appropriate for model selection. The Dummy
+Classifier achieved 0.951 accuracy while identifying no stroke cases,
+and the initial Random Forest also had extremely low recall. Therefore,
+recall, PR-AUC, ROC-AUC, precision, F1-score, and the confusion matrix
+were considered when evaluating model performance.
